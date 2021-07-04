@@ -7,6 +7,7 @@ import '../../sass/typography.scss'
 import Feature from '../../components/feature/feature.component';
 import HomeCard from '../../components/home-card/home-card.component';
 import { CARD_DATA } from '../../components/home-card/data';
+import { GALLERY_IMAGE_DATA } from '../../data/image';
 
 // ICONS
 import key from '../../assets/icon/key.svg'
@@ -19,10 +20,12 @@ import trophy from '../../assets/icon/trophy.svg'
 // IMAGE
 import storyImg1 from '../../assets/image/story-1.jpeg'
 import storyImg2 from '../../assets/image/story-2.jpeg'
+import gal1 from '../../assets/image/gal-1.jpeg'
 
 const HomePage = () =>{ 
 
     const [data, setData] = useState(CARD_DATA);
+    const [galData, setGalData] = useState(GALLERY_IMAGE_DATA);
     return(
         <div className="container">
 
@@ -78,7 +81,16 @@ const HomePage = () =>{
             </section>
             
             <section className="gallery">
-                gallery
+                {/* <img src={gal1} alt="" className='gal-1' /> */}
+                {
+                    galData.map(({id, image}) =>
+                                            <figure className={id}>
+                                                <img src={image} alt="" className='gallery__img' />
+                                            </figure>
+                        
+                    )
+                        
+                }
             </section>
             
             <footer className="footer">
