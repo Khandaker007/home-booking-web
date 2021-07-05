@@ -48,8 +48,8 @@ const HomePage = () =>{
                     <img src={headerLogo} alt="" className="header__logo" />
                     <h5>Home</h5>
                 </div>
-                <h3 className="heading-3">Your own home:</h3>
-                <h1 className="heading-1">The ultimate personal freedom</h1>
+                <h3 className="heading-3 header__h3">Your own home:</h3>
+                <h1 className="heading-1 header__h1">The ultimate personal freedom</h1>
                 <button className="btn header__btn">view our properties</button>
                 <div className="header__seenon-text">As seen on</div>
                 <div className="header__seenon-logos">

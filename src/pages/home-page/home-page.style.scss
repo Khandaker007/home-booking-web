@@ -10,6 +10,9 @@
         grid-template-rows: 5rem 80vh min-content 40vw repeat(3, min-content);
         grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(3rem, 1fr) [full-end];
     }
+    @include response (s-phone){
+        grid-template-rows: 5rem 80vh min-content min-content 40vw repeat(3, min-content);
+    }
 }
 
 .sidebar{
@@ -65,6 +68,21 @@
     grid-template-columns: minmax(min-content, max-content);
     justify-content: center;
     grid-gap: 1.5rem;
+
+    @include response (s-phone){
+        grid-column: full-start / full-end;
+    }
+
+    &__h1{
+        @include response (s-phone){
+            font-size: 2.5rem !important;
+        }
+    }
+    &__h3{
+        @include response (s-phone){
+            font-size: 1.2rem !important;
+        }
+    }
 
     &__logo-container{
         color: $color-primary;
@@ -123,12 +141,16 @@
 
     padding: 2rem;
 
+    @include response (s-phone){
+        grid-column: full-start / full-end;
+    }
     display: grid;
     grid-template-rows: repeat(2, max-content);
     grid-row-gap: 2rem;
     justify-content: center;
     align-content: center;
     justify-items: center;
+
     
 
     &__list{
@@ -177,6 +199,7 @@
 
         @include response (vp-800){
             grid-column: full-start / -1;
+            background-size: cover;
         }
     }
     &__img-1{
