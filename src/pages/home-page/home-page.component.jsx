@@ -20,7 +20,13 @@ import trophy from '../../assets/icon/trophy.svg'
 // IMAGE
 import storyImg1 from '../../assets/image/story-1.jpeg'
 import storyImg2 from '../../assets/image/story-2.jpeg'
-import gal1 from '../../assets/image/gal-1.jpeg'
+
+// LOGO
+import headerLogo from '../../assets/logo/favicon.png'
+import bbcLogo from '../../assets/logo/logo-bbc.png'
+import biLogo from '../../assets/logo/logo-bi.png'
+import forbesLogo from '../../assets/logo/logo-forbes.png'
+import techcrunchLogo from '../../assets/logo/logo-techcrunch.png'
 
 const HomePage = () =>{ 
 
@@ -34,7 +40,20 @@ const HomePage = () =>{
             </div>
             
             <header className="header">
-                header
+                <div className="header__logo-container">
+                    <img src={headerLogo} alt="" className="header__logo" />
+                    <h5>Home</h5>
+                </div>
+                <h3 className="heading-3">Your own home:</h3>
+                <h1 className="heading-1">The ultimate personal freedom</h1>
+                <button className="btn header__btn">view our properties</button>
+                <div className="header__seenon-text">As seen on</div>
+                <div className="header__seenon-logos">
+                    <img src={bbcLogo} alt="seen on logo 1"/>
+                    <img src={biLogo} alt="seen on logo 2" />
+                    <img src={forbesLogo} alt="seen on logo 3" />
+                    <img src={techcrunchLogo} alt="seen on logo 4" />
+                </div>
             </header>
             
             <div className="realtors">
