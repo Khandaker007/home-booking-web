@@ -1,28 +1,41 @@
 @import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
 
 .container{
     display: grid;
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
     grid-template-columns: [sidebar-start] 6rem [sidebar-end full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(3rem, 1fr) [full-end];
     
-
+    @include response (tab-port){
+        grid-template-rows: 5rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(3rem, 1fr) [full-end];
+    }
 }
 
 .sidebar{
     background-color: $color-primary;
+    display: flex;
+    justify-content: flex-end;
+    // align-content: flex-start;
+
     grid-column: sidebar-start / sidebar-end;
     grid-row: 1 / -1;
 
-    text-align: center;
+    @include response (tab-port){
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    
 
     .nav-btn{
         border: none;
         border-radius: 0;
-
         background-color: #fff;
         height: 2px;
         width: 4rem;
-        margin-top: 4rem;
+        margin-right: 4rem;
+        align-self: center;
 
         &::before,
         &::after{
@@ -34,7 +47,7 @@
         }
 
         &::before{transform: translateY(-1rem);}
-        &::after{transform: translateY(1rem);}
+        &::after{transform: translateY(.8rem);}
     }
 }
 
@@ -49,7 +62,7 @@
     
     display: grid;
     grid-template-rows: 1fr min-content 6rem 1fr;
-    grid-template-columns: max-content;
+    grid-template-columns: minmax(min-content, max-content);
     justify-content: center;
     grid-gap: 1.5rem;
 
@@ -91,12 +104,14 @@
     }
     &__seenon-logos{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        // grid-column-gap: 2rem;
-        justify-items: center;
+        grid-template-columns: repeat(4, minmax(min-content, max-content));
+        grid-gap: 2rem;
+        justify-content: center;
+        align-items: center;
 
         img{
-            height: 2rem;
+            max-height: 2rem;
+            max-width: 100%;
             filter: brightness(70%);
         }
     }
@@ -105,6 +120,8 @@
 .realtors{
     background-color: $color-secondary;
     grid-column: col-start 6 / full-end;
+
+    padding: 2rem;
 
     display: grid;
     grid-template-rows: repeat(2, max-content);
@@ -116,9 +133,9 @@
 
     &__list{
         display: grid;
-        grid-template-columns: min-content max-content;
+        grid-template-columns: min-content minmax(min-content, max-content);
         align-items: center;
-        grid-gap: 2rem;
+        grid-gap: 2vh;
     }
     &__img{
         height: 7rem;
@@ -157,6 +174,10 @@
         grid-template-rows: repeat(6, 1fr);
         grid-template-columns: repeat(6, 1fr);
         align-items: center;
+
+        @include response (vp-800){
+            grid-column: full-start / -1;
+        }
     }
     &__img-1{
         width: 100%;
@@ -164,6 +185,13 @@
 
         grid-row: 2 / 6;
         grid-column: 2 / 6;
+
+        @include response (vp-800){
+            grid-row: 2 / 6;
+            grid-column: 3 / 6;
+
+            transform: translateY(-5rem);
+        }
     }
     &__img-2{
         width: 115%;
@@ -172,6 +200,11 @@
 
         grid-row: 4 / 6;
         grid-column: 4 / 7;
+
+        @include response (vp-800){
+            width: 100%;
+            transform: translateY(5rem);
+        }
     }
 
     &__content{
@@ -184,6 +217,13 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+
+        @include response (tab-port){
+            padding: 6rem 8rem;
+        }
+        @include response (vp-800){
+            grid-column: full-start / full-end;
+        }
     }
     &__text{
         font-size: 1.5rem;
