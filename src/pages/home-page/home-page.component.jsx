@@ -30,7 +30,7 @@ const HomePage = () =>{
         <div className="container">
 
             <div className="sidebar">
-                sidebar
+                <button className="nav-btn"></button>
             </div>
             
             <header className="header">
