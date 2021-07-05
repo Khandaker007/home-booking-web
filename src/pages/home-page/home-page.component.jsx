@@ -20,6 +20,10 @@ import trophy from '../../assets/icon/trophy.svg'
 // IMAGE
 import storyImg1 from '../../assets/image/story-1.jpeg'
 import storyImg2 from '../../assets/image/story-2.jpeg'
+import realtor1 from '../../assets/image/realtor-1.jpeg'
+import realtor2 from '../../assets/image/realtor-2.jpeg'
+import realtor3 from '../../assets/image/realtor-3.jpeg'
+
 
 // LOGO
 import headerLogo from '../../assets/logo/favicon.png'
@@ -57,7 +61,24 @@ const HomePage = () =>{
             </header>
             
             <div className="realtors">
-                realtors
+                <h3 className="heading-3">Top 3 Realtors</h3>
+                <div className="realtors__list">
+                    <img src={realtor1} alt="realtors 1" className="realtors__img" />
+                    <div className="realtors__text">
+                        <h3 className="realtors__text--name">Mohammad Ashikur Rahman</h3>
+                        <p className='realtors__text--status'>245 houses sold</p>
+                    </div>
+                    <img src={realtor2} alt="realtors 2" className="realtors__img" />
+                    <div className="realtors__text">
+                        <h3 className="realtors__text--name">jessica</h3>
+                        <p className='realtors__text--status'>212 houses sold</p>
+                    </div>
+                    <img src={realtor3} alt="realtors 3" className="realtors__img" />
+                    <div className="realtors__text">
+                        <h3 className="realtors__text--name">Ragin Ibn Hossain</h3>
+                        <p className='realtors__text--status'>212 houses sold</p>
+                    </div>
+                </div>
             </div>
             
             <section className="features">

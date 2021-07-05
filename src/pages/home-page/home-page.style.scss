@@ -73,6 +73,7 @@
     &__seenon-text{
         color:$color-grey-light-1;
         font-size: 1.2rem;
+        filter: brightness(70%);
 
         display: grid;
         grid-template-columns: 1fr max-content 1fr;
@@ -104,6 +105,35 @@
 .realtors{
     background-color: $color-secondary;
     grid-column: col-start 6 / full-end;
+
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    grid-row-gap: 2rem;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    
+
+    &__list{
+        display: grid;
+        grid-template-columns: min-content max-content;
+        align-items: center;
+        grid-gap: 2rem;
+    }
+    &__img{
+        height: 7rem;
+        border-radius: 50%;
+    }  
+    &__text{
+        color: #fff;
+        &--name{
+            font-size: 1.6rem;
+        }
+        &--status{
+            text-transform: uppercase;
+        }
+    }
+
 }
 
 .features{
